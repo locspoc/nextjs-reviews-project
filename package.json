@@ -2,7 +2,9 @@
 	"name": "nextjs-reviews-project",
 	"private": true,
 	"scripts": {
-		"dev": "next dev"
+		"build": "next build",
+		"dev": "next dev",
+		"start": "next start"
 	},
 	"dependencies": {
 		"next": "^14.1.0",
