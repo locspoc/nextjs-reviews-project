@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect } from 'react';
+import Heading from '../components/Heading';
 
 export default function HomePage() {
 	useEffect(() => {
@@ -8,7 +9,7 @@ export default function HomePage() {
 	}, []);
 	return (
 		<>
-			<h1>Indie Gamer</h1>
+			<Heading>Indie Gamer</Heading>
 			<p>Only the best indie games, reviewed for you.</p>
 		</>
 	);
