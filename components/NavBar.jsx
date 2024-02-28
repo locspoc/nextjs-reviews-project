@@ -20,7 +20,7 @@ export default function NavBar() {
 						Reviews
 					</Link>
 				</li>
-				<li className="ml-auto">
+				<li>
 					<Link
 						href="/about"
 						prefetch={false}
