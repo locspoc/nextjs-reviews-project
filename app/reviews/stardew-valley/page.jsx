@@ -1,16 +1,22 @@
 import { marked } from 'marked';
+import matter from 'gray-matter';
 import { readFile } from 'node:fs/promises';
 
 import Heading from '@/components/Heading';
 
 export default async function StardewValleyPage() {
 	const text = await readFile('./content/reviews/stardew-valley.md', 'utf8');
-	const html = marked(text);
+	const {
+		content,
+		data: { title, date, image },
+	} = matter(text);
+	const html = marked(content);
 	return (
 		<>
 			<Heading>Stardew Valley</Heading>
+			<p className="italic pb-2">{date}</p>
 			<img
-				src="/images/stardew-valley.jpg"
+				src={image}
 				alt="Stardew Valley"
 				width="640"
 				height="360"
@@ -18,7 +24,7 @@ export default async function StardewValleyPage() {
 			/>
 			<article
 				dangerouslySetInnerHTML={{ __html: html }}
-				className="prose prose-slate"
+				className="max-w-screen prose prose-slate"
 			/>
 		</>
 	);
