@@ -1,0 +1,198 @@
+[
+  {
+    "description": "    All pages exist",
+    "elements": [
+      {
+        "description": "",
+        "id": "testing-nextjs-reviews-project;home-page-exists-with-one-featured-game",
+        "keyword": "Scenario",
+        "line": 5,
+        "name": "Home page exists with one featured game",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 6,
+            "name": "I open NextJs Reviews Project home page",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1102000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 7,
+            "name": "Validate that one featured game exists",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 44000000
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "testing-nextjs-reviews-project;reviews-page-exists-with-three-reviews",
+        "keyword": "Scenario",
+        "line": 9,
+        "name": "Reviews page exists with three reviews",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 10,
+            "name": "I open NextJs Reviews Project reviews page",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1546000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 11,
+            "name": "Validate that three game reviews exist",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 38000000
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "testing-nextjs-reviews-project;hellblade-page-exists-with-all-content",
+        "keyword": "Scenario",
+        "line": 13,
+        "name": "Hellblade page exists with all content",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 14,
+            "name": "I open the Hellblade page",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2252000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 15,
+            "name": "Validate that page contents exists",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 73000000
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "testing-nextjs-reviews-project;hollow-knight-page-exists-with-all-content",
+        "keyword": "Scenario",
+        "line": 17,
+        "name": "Hollow Knight page exists with all content",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 18,
+            "name": "I open the Hollow Knight page",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1028000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 19,
+            "name": "Validate that page contents exists",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 54000000
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "testing-nextjs-reviews-project;stardew-valley-page-exists-with-all-content",
+        "keyword": "Scenario",
+        "line": 21,
+        "name": "Stardew Valley page exists with all content",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 22,
+            "name": "I open the Stardew Valley page",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1124000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 23,
+            "name": "Validate that page contents exists",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 57000000
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "testing-nextjs-reviews-project",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Testing NextJS Reviews Project",
+    "tags": [],
+    "uri": "cypress/integration/examples/BDD/reviews.feature"
+  }
+]
