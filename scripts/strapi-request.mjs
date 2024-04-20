@@ -3,13 +3,14 @@ import qs from 'qs';
 
 const url =
 	'http://localhost:1337/api/reviews' +
-	'?populate=*' +
+	// '?populate=*' +
 	'?' +
 	qs.stringify(
 		{
 			fields: ['slug', 'title', 'subtitle', 'publishedAt'],
 			populate: { image: { fields: ['url'] } },
-			// pagination: { pageSize: 6 },
+			sort: ['publishedAt: desc'],
+			pagination: { pageSize: 6 },
 		},
 		{ encodeValueOnly: true }
 	);
