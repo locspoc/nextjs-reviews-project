@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 
 import { getReviews } from '@/lib/reviews';
@@ -13,7 +14,7 @@ export default async function ReviewsPage() {
 	return (
 		<>
 			<Heading>Reviews</Heading>
-			<p>Here we'll list all of the reviews.</p>
+			<p>Here we&pos;ll list all of the reviews.</p>
 			<ul className="flex flex-row flex-wrap gap-3">
 				{reviews.map((review) => (
 					<li
@@ -21,7 +22,7 @@ export default async function ReviewsPage() {
 						className="bg-white border rounded shadow w-80 hover:shadow-xl"
 					>
 						<Link href={`/reviews/${review.slug}`}>
-							<img
+							<Image
 								src={review.image}
 								alt={review.title}
 								width="320"

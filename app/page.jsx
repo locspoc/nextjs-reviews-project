@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 
 import { getFeaturedReview } from '@/lib/reviews';
@@ -14,7 +15,7 @@ export default async function HomePage() {
 					href={`/reviews/${review.slug}`}
 					className="flex flex-col sm:flex-row"
 				>
-					<img
+					<Image
 						src={review.image}
 						alt={review.title}
 						width="320"
