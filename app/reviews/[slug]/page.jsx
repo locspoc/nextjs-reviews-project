@@ -29,6 +29,7 @@ export default async function ReviewPage({ params: { slug } }) {
 			<Image
 				src={review.image}
 				alt={review.title}
+				priority
 				width="640"
 				height="360"
 				className="mb-2 rounded"
