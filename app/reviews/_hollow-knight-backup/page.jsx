@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 import { getReview } from '@/lib/reviews';
 import Heading from '@/components/Heading';
 
@@ -7,7 +9,7 @@ export default async function HollowKnightPage() {
 		<>
 			<Heading>{review.title}</Heading>
 			<p className="italic pb-2">{review.date}</p>
-			<img
+			<Image
 				src={review.image}
 				alt={review.title}
 				width="640"
