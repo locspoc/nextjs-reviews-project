@@ -3,6 +3,9 @@
 module.exports = {
 	// output: 'export',
 	images: {
+		// unoptimized: true,
+		// loader: 'custom',
+		// loaderFile: './my/image/loader.js',
 		remotePatterns: [
 			{
 				hostname: 'localhost',
