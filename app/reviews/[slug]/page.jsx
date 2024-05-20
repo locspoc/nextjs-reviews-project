@@ -3,6 +3,8 @@ import Heading from '@/components/Heading';
 import Image from 'next/image';
 import ShareLinkButton from '@/components/ShareLinkButton';
 
+// export const dynamicParams = false;
+
 export async function generateStaticParams() {
 	const slugs = await getSlugs();
 	console.log('[ReviewPage] generateStaticParams: ', slugs);
@@ -17,6 +19,7 @@ export async function generateMetadata({ params: { slug } }) {
 }
 
 export default async function ReviewPage({ params: { slug } }) {
+	console.log('[ReviewPage] rendering: ', slug);
 	const review = await getReview(slug);
 	return (
 		<>
