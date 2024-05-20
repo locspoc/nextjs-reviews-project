@@ -3,6 +3,7 @@ import Heading from '@/components/Heading';
 import Image from 'next/image';
 import ShareLinkButton from '@/components/ShareLinkButton';
 
+export const dynamic = 'force-dynamic';
 // export const dynamicParams = false;
 
 export async function generateStaticParams() {

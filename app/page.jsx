@@ -4,6 +4,8 @@ import Link from 'next/link';
 import { getReviews } from '@/lib/reviews';
 import Heading from '@/components/Heading';
 
+export const dynamic = 'force-dynamic';
+
 export default async function HomePage() {
 	const reviews = await getReviews(3);
 	console.log(
