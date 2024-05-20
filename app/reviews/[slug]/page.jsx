@@ -1,6 +1,7 @@
 import { getReview, getSlugs } from '@/lib/reviews';
 import Heading from '@/components/Heading';
 import Image from 'next/image';
+import { notFound } from 'next/navigation';
 import ShareLinkButton from '@/components/ShareLinkButton';
 
 export const dynamic = 'force-dynamic';
@@ -14,6 +15,9 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params: { slug } }) {
 	const review = await getReview(slug);
+	if (!review) {
+		notFound();
+	}
 	return {
 		title: review.title,
 	};
@@ -22,6 +26,9 @@ export async function generateMetadata({ params: { slug } }) {
 export default async function ReviewPage({ params: { slug } }) {
 	console.log('[ReviewPage] rendering: ', slug);
 	const review = await getReview(slug);
+	if (!review) {
+		notFound();
+	}
 	return (
 		<>
 			<Heading>{review.title}</Heading>
