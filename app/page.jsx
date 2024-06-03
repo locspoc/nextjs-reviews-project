@@ -4,8 +4,15 @@ import Link from 'next/link';
 import { getReviews } from '@/lib/reviews';
 import Heading from '@/components/Heading';
 
+// export const dynamic = 'force-dynamic';
+// export const revalidate = 30; // seconds, use if fetch is not possible
+
 export default async function HomePage() {
 	const reviews = await getReviews(3);
+	console.log(
+		'[HomePage] rendering: ',
+		reviews.map((review) => review.slug).join(', ')
+	);
 	return (
 		<>
 			<Heading>Indie Gamer</Heading>
