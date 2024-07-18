@@ -3,6 +3,7 @@ import Link from 'next/link';
 
 import { getReviews } from '@/lib/reviews';
 import Heading from '@/components/Heading';
+import PaginationBar from '@/components/PaginationBar';
 
 // export const dynamic = 'force-dynamic';
 // export const revalidate = 30; // seconds, use if fetch is not possible
@@ -11,15 +12,16 @@ export const metadata = {
 	title: 'Reviews',
 };
 
-export default async function ReviewsPage() {
-	const reviews = await getReviews(6);
-	console.log(
-		'[ReviewsPage] rendering: ',
-		reviews.map((review) => review.slug).join(', ')
-	);
+const PAGE_SIZE = 6;
+
+export default async function ReviewsPage({ searchParams }) {
+	const page = parsePageParam(searchParams.page);
+	const {reviews, pageCount} = await getReviews(PAGE_SIZE, page);
+	console.log('[ReviewsPage] rendering: ', page);
 	return (
 		<>
 			<Heading>Reviews</Heading>
+			<PaginationBar href="/reviews" page={page} pageCount={pageCount}/>
 			<p>Here we&rsquo;ll list all of the reviews.</p>
 			<ul className="flex flex-row flex-wrap gap-3">
 				{reviews.map((review, index) => (
@@ -45,4 +47,14 @@ export default async function ReviewsPage() {
 			</ul>
 		</>
 	);
+}
+
+function parsePageParam(paramValue) {
+	if (paramValue) {
+		const page = parseInt(paramValue);
+		if (isFinite(page) && page > 0) {
+			return page;
+		}
+	}
+	return 1;
 }
