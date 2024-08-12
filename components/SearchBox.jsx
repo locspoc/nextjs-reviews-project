@@ -2,8 +2,9 @@
 
 import { Combobox } from '@headlessui/react';
 import { useRouter } from 'next/navigation';
-import { useState } from 'react';
-import {useIsClient} from '@/lib/hooks';
+import { useState, useEffect } from 'react';
+import { useIsClient } from '@/lib/hooks';
+import { searchReviews } from '@/lib/reviews';
 
 // const reviews = [
 //     { slug: 'celeste-2', title: 'Celeste 2 update 1' },
@@ -14,10 +15,23 @@ import {useIsClient} from '@/lib/hooks';
 //     { slug: 'disco-elysium', title: 'Disco Elysium' }
 // ];
 
-export default function SearchBox({ reviews }){
+// export default function SearchBox({ reviews }){
+export default function SearchBox(){
     const router = useRouter();
     const isClient = useIsClient();
     const [ query, setQuery ] = useState('');
+    const [ reviews, setReviews] = useState([]);
+
+    useEffect(()=>{
+        if(query.length > 1){
+            (async ()=> {
+                const reviews = await searchReviews(query);
+                setReviews(reviews);
+            })();
+        } else {
+            setReviews([]);
+        }
+    },[query])
 
     const handleChange = (review) => {
         console.log('selected: ', review);
@@ -43,7 +57,7 @@ export default function SearchBox({ reviews }){
                 value={query}
             />
             <Combobox.Options className="absolute bg-white py-1 w-full">
-                {filtered.map((review)=>(
+                {reviews.map((review)=>(
                     <Combobox.Option key={review.slug} value={review}>
                         {({active})=>(
                             <span className={`block px-2 truncate w-full ${
