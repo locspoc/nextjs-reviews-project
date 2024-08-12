@@ -5,16 +5,16 @@ import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import {useIsClient} from '@/lib/hooks';
 
-const reviews = [
-    { slug: 'celeste-2', title: 'Celeste 2 update 1' },
-    { slug: 'subnautica-2', title: 'Subnautica 2 update 1' },
-    { slug: 'hades-2018', title: 'Hades' },
-    { slug: 'fall-guys', title: 'Fall Guys: Ultimate Knockout' },
-    { slug: 'black-mesa', title: 'Black Mesa' },
-    { slug: 'disco-elysium', title: 'Disco Elysium' }
-];
+// const reviews = [
+//     { slug: 'celeste-2', title: 'Celeste 2 update 1' },
+//     { slug: 'subnautica-2', title: 'Subnautica 2 update 1' },
+//     { slug: 'hades-2018', title: 'Hades' },
+//     { slug: 'fall-guys', title: 'Fall Guys: Ultimate Knockout' },
+//     { slug: 'black-mesa', title: 'Black Mesa' },
+//     { slug: 'disco-elysium', title: 'Disco Elysium' }
+// ];
 
-export default function SearchBox(){
+export default function SearchBox({ reviews }){
     const router = useRouter();
     const isClient = useIsClient();
     const [ query, setQuery ] = useState('');
@@ -30,7 +30,7 @@ export default function SearchBox(){
         return null;
     }
 
-    const filtered = reviews.filter((review) => review.title.includes(query));
+    const filtered = reviews.filter((review) => review.title.toLowerCase().includes(query.toLowerCase())).slice(0,5);
 
     return (
         <div className="relativ w-48">
