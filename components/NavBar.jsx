@@ -4,7 +4,7 @@ export default function NavBar() {
 	return (
 		<nav>
 			<ul className="flex gap-2">
-				<li>
+				<li className="font-bold font-orbitron">
 					<NavLink href="/">
 						Indie Gamer
 					</NavLink>
