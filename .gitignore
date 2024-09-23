@@ -131,3 +131,5 @@ dist
 
 # Other
 .DS_Store
+/prisma/*.db 
+/scripts/strapi-response.json 
